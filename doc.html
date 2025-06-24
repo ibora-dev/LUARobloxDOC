@@ -16,25 +16,49 @@
     <h1>Documentation Lua</h1>
     <p>Dans cette section, tu trouveras des explications sur le scripting Lua pour t’aider à mieux comprendre et programmer sur des plateformes comme <strong>Roblox</strong>.</p>
 
-    <h2>Exemple de base</h2>
-    <p>Voici un script Lua simple :</p>
-
+    <h1>Partie 1 : Les bases du langage Lua</h1>
+    <h2>Chapitre 1.1 – Les types de données en Lua</h2>
+    <p>En Lua, il y a plusieurs types de données, c’est-à-dire plusieurs sortes de valeurs différentes que tu peux utiliser dans ton script. Chaque type sert à quelque chose.</p>
+    <h2>1. Texte (string)</h2>
+    <p>C’est du texte, comme un nom, une phrase, un mot.
+Pour dire que c’est du texte, tu dois toujours mettre des guillemets autour, comme ça : "texte" ou 'texte'.
+    <strong>Exemple :</strong></p>
     <textarea rows="8" cols="60" readonly>
--- Script de base
-local joueur = game.Players.LocalPlayer
-print("Bienvenue, " .. joueur.Name)
+local pseudo = "Ibora"
+    </textarea>
+<p>Ici, pseudo contient le texte Ibora.</p>
+
+    <h2>2. Nombre (number)</h2>
+    <p>Ce sont les chiffres, par exemple 5, 10, 3.14.
+On écrit les nombres sans guillemets.
+    <strong>Exemple :</strong></p>
+    <textarea rows="8" cols="60" readonly>
+local age = 17
+local pi = 3.14
     </textarea>
 
-    <h2>Variables et fonctions</h2>
-    <p>Lua est un langage simple. Tu peux créer des fonctions comme ceci :</p>
+    <h2>3. Vrai ou faux (boolean)</h2>
+    <p>C’est un type spécial qui peut être seulement <strong>true</strong> (vrai) ou <strong>false</strong> (faux).
+Ça sert à poser des questions dans ton script.
+    <strong>Exemple :</strong></p>
+    <textarea rows="8" cols="60" readonly>
+local estActif = true
+local estMort = false
+    </textarea>
 
-    <pre><code>
-function direBonjour(nom)
-  print("Bonjour " .. nom)
-end
-
-direBonjour("Ibora")
-    </code></pre>
+    <h2>4. Vide (nil)</h2>
+    <p>C’est quand une variable ne contient rien, elle est vide.
+    <strong>Exemple :</strong></p>
+    <textarea rows="8" cols="60" readonly>
+local objet = nil
+    </textarea>
+    
+     <h2>4. Vide (nil)</h2>
+    <p>C’est quand une variable ne contient rien, elle est vide.
+    <strong>Exemple :</strong></p>
+    <textarea rows="8" cols="60" readonly>
+local objet = nil
+    </textarea>
   </main>
 </body>
 </html>
