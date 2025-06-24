@@ -128,6 +128,56 @@ print(score)
 local score = 10
     </textarea>
     <p>Tu auras une erreur, car tu utilises la variable avant de lui donner une valeur.</p>
+     <h2>Chapitre 1.3 – Les conditions (if, else)</h2>
+    <p>Les conditions te permettent de faire des choix dans ton script.
+C’est comme poser une question, et agir différemment selon la réponse.</p>
+    <p>La base : <strong>if</strong></p>
+    <textarea rows="8" cols="60" readonly>
+if vie > 0 then
+  print("Le joueur est en vie")
+end
+    </textarea>
+    <p>Ici, on demande : si la vie est plus grande que zéro, alors on affiche un message.
+Si la condition est vraie, le code entre if et end s’exécute.</p>
+      <p>Ajouter un sinon : <strong>else</strong></p>
+    <textarea rows="8" cols="60" readonly>
+if vie > 0 then
+  print("Le joueur est en vie")
+else
+  print("Le joueur est mort")
+end
+    </textarea>
+    <p>Si la vie est plus grande que zéro, on affiche que le joueur est en vie.
+Sinon (si la vie est zéro ou moins), on affiche que le joueur est mort.</p>
+     <p>Plusieurs cas : <strong>elseif</strong></p>
+    <textarea rows="8" cols="60" readonly>
+if vie > 50 then
+  print("Le joueur est en pleine forme")
+elseif vie > 0 then
+  print("Le joueur est blessé")
+else
+  print("Le joueur est mort")
+end
+    </textarea>
+    <p>Tu peux tester plusieurs conditions dans l’ordre.
+La première vraie condition est celle qui s’exécute.</p>
+     <p>Exemple complet</p>
+    <textarea rows="8" cols="60" readonly>
+local vie = 30
+
+if vie > 50 then
+  print("Plein de vie")
+elseif vie > 0 then
+  print("Quelques blessures")
+else
+  print("Mort")
+end
+    </textarea>
+    <h3>Pourquoi c’est utile ?</h3>
+    <p>Avec les conditions, tu peux :
+Vérifier si un joueur a assez de points pour continuer.
+Faire des actions différentes selon la situation.
+Gérer les erreurs et les cas spéciaux.</p>
   </main>
 </body>
 </html>
