@@ -1,21 +1,40 @@
-<h2>Section Script Exemple</h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Doc</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="doc.html" class="active">Doc</a>
+    <a href="credit.html">Crédit</a>
+  </nav>
 
-<p>Voici un script Lua :</p>
+  <main>
+    <h1>Documentation Lua</h1>
+    <p>Dans cette section, tu trouveras des explications sur le scripting Lua pour t’aider à mieux comprendre et programmer sur des plateformes comme <strong>Roblox</strong>.</p>
 
-<textarea rows="8" cols="60" readonly>
--- Exemple simple
-print("Salut Roblox")
-for i=1,3 do
-  print(i)
+    <h2>Exemple de base</h2>
+    <p>Voici un script Lua simple :</p>
+
+    <textarea rows="8" cols="60" readonly>
+-- Script de base
+local joueur = game.Players.LocalPlayer
+print("Bienvenue, " .. joueur.Name)
+    </textarea>
+
+    <h2>Variables et fonctions</h2>
+    <p>Lua est un langage simple. Tu peux créer des fonctions comme ceci :</p>
+
+    <pre><code>
+function direBonjour(nom)
+  print("Bonjour " .. nom)
 end
-</textarea>
 
-<p>Ou affiché en bloc code :</p>
-
-<pre><code>
--- Exemple simple
-print("Salut Roblox")
-for i=1,3 do
-  print(i)
-end
-</code></pre>
+direBonjour("Ibora")
+    </code></pre>
+  </main>
+</body>
+</html>
