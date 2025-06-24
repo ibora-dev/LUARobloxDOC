@@ -178,6 +178,50 @@ end
 Vérifier si un joueur a assez de points pour continuer.
 Faire des actions différentes selon la situation.
 Gérer les erreurs et les cas spéciaux.</p>
+     <h2>Chapitre 1.4 – Les fonctions</h2>
+    <p>Une fonction, c’est comme une petite machine ou un mini programme qui fait un travail précis.
+Tu peux la créer une fois, puis l’utiliser (appeler) plusieurs fois dans ton script.</p>
+    <p>Créer une fonction simple</p>
+    <textarea rows="8" cols="60" readonly>
+local function direBonjour()
+  print("Bonjour !")
+end
+    </textarea>
+    <p>Ici, tu as créé une fonction qui affiche "Bonjour !".
+Le mot function sert à créer la fonction.
+Le end indique la fin de la fonction.</p>
+     <h3>Utiliser (appeler) la fonction</h3>
+    <p>Pour faire fonctionner ta machine, tu dois appeler la fonction avec son nom :</p>
+    <textarea rows="8" cols="60" readonly>
+direBonjour()  -- ça affiche Bonjour !
+    </textarea>
+      <h3>Fonctions avec paramètres</h3>
+    <p>Tu peux aussi donner des informations à ta fonction pour qu’elle travaille dessus.</p>
+    <textarea rows="8" cols="60" readonly>
+local function direBonjour(pseudo)
+  print("Bonjour, " .. pseudo .. " !")
+end
+
+direBonjour("Ibora")  -- affiche Bonjour, Ibora !
+    </textarea>
+    <p>Ici, pseudo est un paramètre : c’est une info que la fonction reçoit.
+Le .. sert à coller du texte (concaténer).</p>
+     <h3>Fonctions qui donnent un résultat</h3>
+    <p>TuUne fonction peut aussi renvoyer une valeur que tu peux utiliser.</p>
+    <textarea rows="8" cols="60" readonly>
+local function addition(a, b)
+  return a + b
+end
+
+local resultat = addition(5, 3)
+print(resultat)  -- affiche 8
+    </textarea>
+    <p>Le mot return sert à renvoyer un résultat.
+Tu peux stocker ce résultat dans une variable.</p>
+    <h3>Pourquoi utiliser des fonctions ?</h3>
+    <p>Pour éviter de répéter le même code.
+Pour organiser ton script en petits morceaux faciles à comprendre.
+Pour réutiliser du code facilement.</p>
   </main>
 </body>
 </html>
