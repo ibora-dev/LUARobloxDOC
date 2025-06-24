@@ -53,11 +53,38 @@ local estMort = false
 local objet = nil
     </textarea>
     
-     <h2>4. Vide (nil)</h2>
-    <p>C’est quand une variable ne contient rien, elle est vide.
+     <h2>Liste ou groupe (table)</h2>
+    <p>Une table sert à ranger plusieurs choses ensemble, un peu comme une boîte avec plusieurs compartiments.
+Ça peut être une liste de nombres ou un groupe avec des noms et des valeurs.
+    <strong>Exemple de liste :</strong></p>
+    <textarea rows="8" cols="60" readonly>
+local scores = {100, 200, 150}
+    </textarea>
+     <strong>Exemple avec des noms :</strong></p>
+    <textarea rows="8" cols="60" readonly>
+local joueur = {
+  nom = "Ibora",
+  niveau = 5
+}
+    </textarea>
+     <h2>6. Fonction (function)</h2>
+    <p>Une fonction est un groupe d’instructions que tu peux appeler quand tu veux.
+Par exemple, un mini programme qui dit bonjour.
     <strong>Exemple :</strong></p>
     <textarea rows="8" cols="60" readonly>
-local objet = nil
+local function direBonjour()
+  print("Bonjour !")
+end
+
+direBonjour()  -- Ça affiche Bonjour !
+    </textarea>
+    <h2>Petite astuce</h2>
+    <p>Tu peux toujours vérifier le type d’une valeur avec typeof() :
+    <strong>Exemple :</strong></p>
+    <textarea rows="8" cols="60" readonly>
+print(typeof(123))        -- affiche "number"
+print(typeof("Salut"))    -- affiche "string"
+print(typeof(true))       -- affiche "boolean"
     </textarea>
   </main>
 </body>
