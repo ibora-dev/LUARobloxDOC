@@ -86,6 +86,48 @@ print(typeof(123))        -- affiche "number"
 print(typeof("Salut"))    -- affiche "string"
 print(typeof(true))       -- affiche "boolean"
     </textarea>
+     <h2>Chapitre 1.2 – Les variables</h2>
+    <p>Une variable, c’est comme une boîte où tu ranges une valeur.
+Cette boîte a un nom pour que tu puisses retrouver ce qu’il y a dedans.</p>
+    <p><strong>Exemple simple :</strong></p>
+    <textarea rows="8" cols="60" readonly>
+local score = 100
+    </textarea>
+    <p>Ici, tu crées une variable appelée score.
+Tu y mets la valeur 100.
+Plus tard, tu peux utiliser ou changer cette valeur en parlant de score.</p>
+    <h3>La boîte a un nom : la variable</h3>
+    <p>Imagine que tu as plein de boîtes avec des étiquettes :
+Une boîte nommée score
+Une boîte nommée vie
+Une boîte nommée pseudo
+Chaque boîte contient quelque chose, et tu peux l’ouvrir, changer ce qu’il y a dedans, ou l’utiliser.</p>
+     <h3>Pourquoi utiliser local ?</h3>
+    <p>En Lua, tu écris souvent :</p>
+    <textarea rows="8" cols="60" readonly>
+local score = 100
+    </textarea>
+<p>Cela signifie que cette variable existe seulement ici, dans ce morceau de script. C’est une bonne habitude pour éviter des erreurs.</p>
+    <h3>Changer la valeur d’une variable</h3>
+    <p>Tu peux modifier ce qu’il y a dans la boîte :</p>
+    <textarea rows="8" cols="60" readonly>
+local vie = 50
+vie = vie - 10  -- la vie devient 40
+print(vie)      -- affiche 40
+    </textarea>
+    <h3>Afficher une variable</h3>
+    <p>Pour voir ce qu’il y a dans une variable, utilise print() :</p>
+    <textarea rows="8" cols="60" readonly>
+local pseudo = "Ibora"
+print(pseudo)  -- affiche Ibora
+    </textarea>
+    <h3>Attention à l’ordre !</h3>
+    <p>Si tu écris :</p>
+    <textarea rows="8" cols="60" readonly>
+print(score)
+local score = 10
+    </textarea>
+    <p>Tu auras une erreur, car tu utilises la variable avant de lui donner une valeur.</p>
   </main>
 </body>
 </html>
