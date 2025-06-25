@@ -1,61 +1,124 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Documentation Lua - Ibora</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation Lua</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    nav {
+      background: #222;
+      padding: 10px;
+      color: white;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin-right: 20px;
+      text-decoration: none;
+    }
+    nav a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .sidebar {
+      width: 250px;
+      background: #f5f5f5;
+      padding: 20px;
+      margin-top: 50px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+    .content {
+      margin-left: 270px;
+      padding: 20px;
+      margin-top: 60px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    textarea {
+      width: 100%;
+      background: #eee;
+      font-family: monospace;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border: none;
+      resize: none;
+    }
+  </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html">Accueil</a>
     <a href="doc.html" class="active">Doc</a>
     <a href="credit.html">Crédit</a>
   </nav>
 
-  <main>
-    <h1>Documentation Lua</h1>
-    <p>Bienvenue dans la documentation d'apprentissage du scripting Lua pour <strong>Roblox Studio</strong>. Tu vas apprendre à créer tes propres scripts, ligne par ligne, avec des exemples simples et des explications claires.</p>
+  <div class="sidebar">
+    <h3>Sommaire</h3>
+    <ul>
+      <li><a href="#partie1">Partie 1 – Bases de Lua</a>
+        <ul>
+          <li><a href="#chap1-1">1.1 Types de données</a></li>
+          <!-- autres chapitres ici -->
+        </ul>
+      </li>
+    </ul>
+  </div>
 
-    <h1>Partie 1 : Les bases du langage Lua</h1>
+  <div class="content">
+    <h1 id="partie1">Partie 1 : Les bases du langage Lua</h1>
 
-    <h2>Chapitre 1.1 – Les types de données en Lua</h2>
-    <p>En Lua, chaque donnée a un type. C'est ce qui permet au langage de savoir comment manipuler la valeur.</p>
+    <h2 id="chap1-1">Chapitre 1.1 – Les types de données en Lua</h2>
+    <p>En Lua, il existe plusieurs <strong>types de données</strong>. Ce sont les différentes sortes de valeurs que tu peux utiliser dans ton script.</p>
 
     <h3>1. Texte (string)</h3>
-    <p>Une <strong>string</strong> est une chaîne de caractères, c'est-à-dire du texte. Elle est toujours entre guillemets : <code>""</code> ou <code>''</code>.</p>
-    <textarea rows="4" cols="60" readonly>
+    <p>Une <strong>string</strong> est une chaîne de caractères, c’est-à-dire du texte.
+    Il faut toujours mettre le texte entre <strong>guillemets</strong> simples ou doubles : <code>"texte"</code> ou <code>'texte'</code>.</p>
+    <textarea rows="3" readonly>
 local pseudo = "Ibora"
     </textarea>
-    <p>Ici, la variable <code>pseudo</code> contient le texte <code>Ibora</code>.</p>
+    <p>Ici, <code>pseudo</code> contient la chaîne de caractères "Ibora".</p>
 
     <h3>2. Nombre (number)</h3>
-    <p>Ce sont des valeurs numériques. Il n'y a pas de guillemets autour.</p>
-    <textarea rows="3" cols="60" readonly>
+    <p>Un <strong>number</strong> est une valeur numérique. On l’écrit sans guillemets.</p>
+    <textarea rows="3" readonly>
 local age = 17
 local pi = 3.14
     </textarea>
 
-    <h3>3. Booléen (boolean)</h3>
-    <p>Un boolean représente le vrai ou le faux : <code>true</code> ou <code>false</code>.</p>
-    <textarea rows="3" cols="60" readonly>
+    <h3>3. Vrai ou faux (boolean)</h3>
+    <p>Un <strong>boolean</strong> peut être soit <code>true</code> (vrai) soit <code>false</code> (faux).</p>
+    <textarea rows="3" readonly>
 local estConnecte = true
 local estMort = false
     </textarea>
 
-    <h3>4. Nil (vide)</h3>
-    <p><code>nil</code> signifie que la variable ne contient rien (valeur vide).</p>
-    <textarea rows="2" cols="60" readonly>
+    <h3>4. Vide (nil)</h3>
+    <p><code>nil</code> représente une valeur vide ou inexistante.</p>
+    <textarea rows="2" readonly>
 local objet = nil
     </textarea>
 
-    <h3>5. Table (liste ou groupe)</h3>
-    <p>Les tables permettent de regrouper plusieurs valeurs.</p>
-    <strong>Exemple de liste :</strong>
-    <textarea rows="2" cols="60" readonly>
+    <h3>5. Liste ou groupe (table)</h3>
+    <p>Une <strong>table</strong> est comme une boîte qui peut contenir plusieurs valeurs.</p>
+    <textarea rows="3" readonly>
 local scores = {100, 200, 150}
     </textarea>
-    <strong>Exemple avec des noms :</strong>
-    <textarea rows="4" cols="60" readonly>
+    <p>Ou avec des noms : </p>
+    <textarea rows="4" readonly>
 local joueur = {
   nom = "Ibora",
   niveau = 5
@@ -63,23 +126,23 @@ local joueur = {
     </textarea>
 
     <h3>6. Fonction (function)</h3>
-    <p>Une fonction permet de créer un petit bloc de code qu'on peut réutiliser.</p>
-    <textarea rows="5" cols="60" readonly>
+    <p>Une fonction est un bloc de code qu'on peut exécuter plusieurs fois.</p>
+    <textarea rows="5" readonly>
 local function direBonjour()
   print("Bonjour !")
 end
 
-direBonjour() -- Affiche Bonjour !
+direBonjour()
     </textarea>
 
-    <h3>Astuce utile</h3>
-    <p>Tu peux vérifier le type d'une valeur avec <code>typeof()</code> :</p>
-    <textarea rows="4" cols="60" readonly>
-print(typeof("Salut")) -- string
-print(typeof(42))       -- number
-print(typeof(true))     -- boolean
+    <h3>Astuce : savoir le type</h3>
+    <p>Pour connaître le type d’une valeur, utilise <code>typeof()</code> :</p>
+    <textarea rows="4" readonly>
+print(typeof(123))        -- "number"
+print(typeof("Salut"))    -- "string"
+print(typeof(true))       -- "boolean"
     </textarea>
+  </div>
 
-  </main>
 </body>
 </html>
