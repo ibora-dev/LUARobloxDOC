@@ -2,226 +2,115 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Doc</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Documentation Lua - Ibora</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+    }
+    nav {
+      width: 200px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+    nav h2 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+    nav a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #333;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      margin-left: 220px;
+      padding: 20px;
+      max-width: 800px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: monospace;
+    }
+  </style>
 </head>
 <body>
+
   <nav>
-    <a href="index.html">Accueil</a>
-    <a href="doc.html" class="active">Doc</a>
-    <a href="credit.html">Crédit</a>
+    <h2>Sommaire</h2>
+    <a href="#ch1-1">1.1 – Les types de données</a>
+    <a href="#ch1-2">1.2 – Les variables</a>
+    <a href="#ch1-3">1.3 – Les conditions</a>
   </nav>
 
   <main>
-    <h1>Documentation Lua</h1>
-    <p>Dans cette section, tu trouveras des explications sur le scripting Lua pour t’aider à mieux comprendre et programmer sur des plateformes comme <strong>Roblox</strong>.</p>
+    <h1>Documentation Lua - Roblox Studio</h1>
 
-    <h1>Partie 1 : Les bases du langage Lua</h1>
-    <h2>Chapitre 1.1 – Les types de données en Lua</h2>
-    <p>En Lua, il y a plusieurs types de données, c’est-à-dire plusieurs sortes de valeurs différentes que tu peux utiliser dans ton script. Chaque type sert à quelque chose.</p>
-    <h2>1. Texte (string)</h2>
-    <p>C’est du texte, comme un nom, une phrase, un mot.
-Pour dire que c’est du texte, tu dois toujours mettre des guillemets autour, comme ça : "texte" ou 'texte'.
-    <strong>Exemple :</strong></p>
-    <textarea rows="8" cols="60" readonly>
-local pseudo = "Ibora"
-    </textarea>
-<p>Ici, pseudo contient le texte Ibora.</p>
-
-    <h2>2. Nombre (number)</h2>
-    <p>Ce sont les chiffres, par exemple 5, 10, 3.14.
-On écrit les nombres sans guillemets.
-    <strong>Exemple :</strong></p>
-    <textarea rows="8" cols="60" readonly>
+    <section id="ch1-1">
+      <h2>1.1 – Les types de données</h2>
+      <p>Lua utilise plusieurs types de données :</p>
+      <ul>
+        <li><strong>string</strong> : texte entre guillemets</li>
+        <li><strong>number</strong> : nombres (entiers ou décimaux)</li>
+        <li><strong>boolean</strong> : <code>true</code> ou <code>false</code></li>
+        <li><strong>nil</strong> : valeur vide</li>
+        <li><strong>table</strong> : liste ou groupe d’éléments</li>
+        <li><strong>function</strong> : bloc de code réutilisable</li>
+      </ul>
+      <pre><code>local pseudo = "Ibora"
 local age = 17
-local pi = 3.14
-    </textarea>
-
-    <h2>3. Vrai ou faux (boolean)</h2>
-    <p>C’est un type spécial qui peut être seulement <strong>true</strong> (vrai) ou <strong>false</strong> (faux).
-Ça sert à poser des questions dans ton script.
-    <strong>Exemple :</strong></p>
-    <textarea rows="8" cols="60" readonly>
-local estActif = true
-local estMort = false
-    </textarea>
-
-    <h2>4. Vide (nil)</h2>
-    <p>C’est quand une variable ne contient rien, elle est vide.
-    <strong>Exemple :</strong></p>
-    <textarea rows="8" cols="60" readonly>
-local objet = nil
-    </textarea>
-    
-     <h2>Liste ou groupe (table)</h2>
-    <p>Une table sert à ranger plusieurs choses ensemble, un peu comme une boîte avec plusieurs compartiments.
-Ça peut être une liste de nombres ou un groupe avec des noms et des valeurs.
-    <strong>Exemple de liste :</strong></p>
-    <textarea rows="8" cols="60" readonly>
-local scores = {100, 200, 150}
-    </textarea>
-     <strong>Exemple avec des noms :</strong></p>
-    <textarea rows="8" cols="60" readonly>
-local joueur = {
-  nom = "Ibora",
-  niveau = 5
-}
-    </textarea>
-     <h2>6. Fonction (function)</h2>
-    <p>Une fonction est un groupe d’instructions que tu peux appeler quand tu veux.
-Par exemple, un mini programme qui dit bonjour.
-    <strong>Exemple :</strong></p>
-    <textarea rows="8" cols="60" readonly>
+local estConnecté = true
+local rien = nil
+local joueur = {nom = "Ibora", niveau = 5}
 local function direBonjour()
-  print("Bonjour !")
-end
+  print("Salut !")
+end</code></pre>
+    </section>
 
-direBonjour()  -- Ça affiche Bonjour !
-    </textarea>
-    <h2>Petite astuce</h2>
-    <p>Tu peux toujours vérifier le type d’une valeur avec typeof() :
-    <strong>Exemple :</strong></p>
-    <textarea rows="8" cols="60" readonly>
-print(typeof(123))        -- affiche "number"
-print(typeof("Salut"))    -- affiche "string"
-print(typeof(true))       -- affiche "boolean"
-    </textarea>
-     <h2>Chapitre 1.2 – Les variables</h2>
-    <p>Une variable, c’est comme une boîte où tu ranges une valeur.
-Cette boîte a un nom pour que tu puisses retrouver ce qu’il y a dedans.</p>
-    <p><strong>Exemple simple :</strong></p>
-    <textarea rows="8" cols="60" readonly>
-local score = 100
-    </textarea>
-    <p>Ici, tu crées une variable appelée score.
-Tu y mets la valeur 100.
-Plus tard, tu peux utiliser ou changer cette valeur en parlant de score.</p>
-    <h3>La boîte a un nom : la variable</h3>
-    <p>Imagine que tu as plein de boîtes avec des étiquettes :
-Une boîte nommée score
-Une boîte nommée vie
-Une boîte nommée pseudo
-Chaque boîte contient quelque chose, et tu peux l’ouvrir, changer ce qu’il y a dedans, ou l’utiliser.</p>
-     <h3>Pourquoi utiliser local ?</h3>
-    <p>En Lua, tu écris souvent :</p>
-    <textarea rows="8" cols="60" readonly>
-local score = 100
-    </textarea>
-<p>Cela signifie que cette variable existe seulement ici, dans ce morceau de script. C’est une bonne habitude pour éviter des erreurs.</p>
-    <h3>Changer la valeur d’une variable</h3>
-    <p>Tu peux modifier ce qu’il y a dans la boîte :</p>
-    <textarea rows="8" cols="60" readonly>
-local vie = 50
-vie = vie - 10  -- la vie devient 40
-print(vie)      -- affiche 40
-    </textarea>
-    <h3>Afficher une variable</h3>
-    <p>Pour voir ce qu’il y a dans une variable, utilise print() :</p>
-    <textarea rows="8" cols="60" readonly>
-local pseudo = "Ibora"
-print(pseudo)  -- affiche Ibora
-    </textarea>
-    <h3>Attention à l’ordre !</h3>
-    <p>Si tu écris :</p>
-    <textarea rows="8" cols="60" readonly>
-print(score)
-local score = 10
-    </textarea>
-    <p>Tu auras une erreur, car tu utilises la variable avant de lui donner une valeur.</p>
-     <h2>Chapitre 1.3 – Les conditions (if, else)</h2>
-    <p>Les conditions te permettent de faire des choix dans ton script.
-C’est comme poser une question, et agir différemment selon la réponse.</p>
-    <p>La base : <strong>if</strong></p>
-    <textarea rows="8" cols="60" readonly>
-if vie > 0 then
-  print("Le joueur est en vie")
-end
-    </textarea>
-    <p>Ici, on demande : si la vie est plus grande que zéro, alors on affiche un message.
-Si la condition est vraie, le code entre if et end s’exécute.</p>
-      <p>Ajouter un sinon : <strong>else</strong></p>
-    <textarea rows="8" cols="60" readonly>
+    <section id="ch1-2">
+      <h2>1.2 – Les variables</h2>
+      <p>Une variable est un nom auquel on associe une valeur :</p>
+      <pre><code>local score = 100
+print(score)</code></pre>
+      <p>Tu peux changer sa valeur :</p>
+      <pre><code>score = score + 50</code></pre>
+    </section>
+
+    <section id="ch1-3">
+      <h2>1.3 – Les conditions (if, else)</h2>
+      <p>Les conditions servent à faire des choix dans le script :</p>
+      <pre><code>local vie = 10
+
 if vie > 0 then
   print("Le joueur est en vie")
 else
   print("Le joueur est mort")
-end
-    </textarea>
-    <p>Si la vie est plus grande que zéro, on affiche que le joueur est en vie.
-Sinon (si la vie est zéro ou moins), on affiche que le joueur est mort.</p>
-     <p>Plusieurs cas : <strong>elseif</strong></p>
-    <textarea rows="8" cols="60" readonly>
-if vie > 50 then
-  print("Le joueur est en pleine forme")
-elseif vie > 0 then
-  print("Le joueur est blessé")
-else
-  print("Le joueur est mort")
-end
-    </textarea>
-    <p>Tu peux tester plusieurs conditions dans l’ordre.
-La première vraie condition est celle qui s’exécute.</p>
-     <p>Exemple complet</p>
-    <textarea rows="8" cols="60" readonly>
-local vie = 30
+end</code></pre>
 
-if vie > 50 then
+      <p>Avec plusieurs cas :</p>
+      <pre><code>if vie > 50 then
   print("Plein de vie")
 elseif vie > 0 then
-  print("Quelques blessures")
+  print("Blessé")
 else
   print("Mort")
-end
-    </textarea>
-    <h3>Pourquoi c’est utile ?</h3>
-    <p>Avec les conditions, tu peux :
-Vérifier si un joueur a assez de points pour continuer.
-Faire des actions différentes selon la situation.
-Gérer les erreurs et les cas spéciaux.</p>
-     <h2>Chapitre 1.4 – Les fonctions</h2>
-    <p>Une fonction, c’est comme une petite machine ou un mini programme qui fait un travail précis.
-Tu peux la créer une fois, puis l’utiliser (appeler) plusieurs fois dans ton script.</p>
-    <p>Créer une fonction simple</p>
-    <textarea rows="8" cols="60" readonly>
-local function direBonjour()
-  print("Bonjour !")
-end
-    </textarea>
-    <p>Ici, tu as créé une fonction qui affiche "Bonjour !".
-Le mot function sert à créer la fonction.
-Le end indique la fin de la fonction.</p>
-     <h3>Utiliser (appeler) la fonction</h3>
-    <p>Pour faire fonctionner ta machine, tu dois appeler la fonction avec son nom :</p>
-    <textarea rows="8" cols="60" readonly>
-direBonjour()  -- ça affiche Bonjour !
-    </textarea>
-      <h3>Fonctions avec paramètres</h3>
-    <p>Tu peux aussi donner des informations à ta fonction pour qu’elle travaille dessus.</p>
-    <textarea rows="8" cols="60" readonly>
-local function direBonjour(pseudo)
-  print("Bonjour, " .. pseudo .. " !")
-end
-
-direBonjour("Ibora")  -- affiche Bonjour, Ibora !
-    </textarea>
-    <p>Ici, pseudo est un paramètre : c’est une info que la fonction reçoit.
-Le .. sert à coller du texte (concaténer).</p>
-     <h3>Fonctions qui donnent un résultat</h3>
-    <p>TuUne fonction peut aussi renvoyer une valeur que tu peux utiliser.</p>
-    <textarea rows="8" cols="60" readonly>
-local function addition(a, b)
-  return a + b
-end
-
-local resultat = addition(5, 3)
-print(resultat)  -- affiche 8
-    </textarea>
-    <p>Le mot return sert à renvoyer un résultat.
-Tu peux stocker ce résultat dans une variable.</p>
-    <h3>Pourquoi utiliser des fonctions ?</h3>
-    <p>Pour éviter de répéter le même code.
-Pour organiser ton script en petits morceaux faciles à comprendre.
-Pour réutiliser du code facilement.</p>
+end</code></pre>
+    </section>
   </main>
 </body>
 </html>
